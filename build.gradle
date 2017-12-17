@@ -1,0 +1,39 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.0.M6'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+
+    }
+}
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.rsoi'
+version = '0.0.1'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+ext.springVersion = '5.0.1.RELEASE'
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:2.0.0.M2")
+    compile('org.springframework.cloud:spring-cloud-starter-eureka-server:2.0.0.M2')
+    compile('org.apiguardian:apiguardian-api:1.0.0')
+}
